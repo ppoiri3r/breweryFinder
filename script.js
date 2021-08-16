@@ -11,7 +11,6 @@ kegshoeApp.getUserSelection = function() {
   dropDown = document.querySelector('select')
   dropDown.addEventListener('change', function(e) {
     e.preventDefault();
-    console.log(e);
     let selectedState = dropDown.options[dropDown.selectedIndex].value;
     kegshoeApp.getBreweries(selectedState)
 
@@ -33,7 +32,6 @@ kegshoeApp.getBreweries = function(state) {
     return breweryData.json()
   })
   .then(function (breweryDataJson) {
-    console.log(breweryDataJson);
     kegshoeApp.breweries = breweryDataJson;
     kegshoeApp.displayBreweries(kegshoeApp.breweries)
   })
